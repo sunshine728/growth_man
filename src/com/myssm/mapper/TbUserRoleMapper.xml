@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myssm.mapper.TbUserRoleMapper">
+  <resultMap id="BaseResultMap" type="com.myssm.bean.TbUserRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <id column="role_id" jdbcType="INTEGER" property="roleId" />
+  </resultMap>
+    <resultMap id="tbRoleMap" type="com.myssm.bean.TbRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="role_description" jdbcType="VARCHAR" property="roleDescription" />
+  </resultMap>
+  <select id="getRole" parameterType="int" resultMap="tbRoleMap">
+  select role.* from tb_user_role u_role,tb_role role where u_role.role_id=role.role_id and u_role.user_id=#{userId}
+  </select>
+  
+    <select id="countUserId" parameterType="int" resultMap="BaseResultMap">
+  select * from tb_user_role where user_id=#{userId}
+  </select>
+      <delete id="delUserRole" parameterType="int">
+  delete  from tb_user_role where user_id=#{userId}
+  </delete>
+  <insert id="addUserRole" parameterType="com.myssm.bean.TbUserRole">
+  insert into  tb_user_role(user_id,role_id) values (#{userId},#{roleId})
+  </insert>
+</mapper>

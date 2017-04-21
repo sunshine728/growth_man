@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myssm.mapper.TbBabyMapper">
+  <resultMap id="BaseResultMap" type="com.myssm.bean.TbBaby">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="baby_id" jdbcType="INTEGER" property="babyId" />
+    <result column="baby_name" jdbcType="VARCHAR" property="babyName" />
+    <result column="baby_gender" jdbcType="INTEGER" property="babyGender" />
+    <result column="baby_birth" jdbcType="DATE" property="babyBirth" />
+    <result column="baby_weight" jdbcType="REAL" property="babyWeight" />
+    <result column="baby_height" jdbcType="REAL" property="babyHeight" />
+    <result column="baby_old_path" jdbcType="VARCHAR" property="babyOldPath" />
+    <result column="baby_new_path" jdbcType="VARCHAR" property="babyNewPath" />
+    <result column="baby_health" jdbcType="INTEGER" property="babyHealth" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+  </resultMap>
+</mapper>

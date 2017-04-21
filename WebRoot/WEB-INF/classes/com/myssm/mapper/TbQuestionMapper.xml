@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myssm.mapper.TbQuestionMapper">
+  <resultMap id="BaseResultMap" type="com.myssm.bean.TbQuestion">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="question_id" jdbcType="INTEGER" property="questionId" />
+    <result column="question_title" jdbcType="VARCHAR" property="questionTitle" />
+    <result column="question_right" jdbcType="VARCHAR" property="questionRight" />
+    <result column="question_type" jdbcType="INTEGER" property="questionType" />
+    <result column="question_content" jdbcType="LONGVARCHAR" property="questionContent" />
+    <result column="question_A" jdbcType="LONGVARCHAR" property="questionA" />
+    <result column="question_B" jdbcType="LONGVARCHAR" property="questionB" />
+    <result column="question_c" jdbcType="LONGVARCHAR" property="questionC" />
+    <result column="question_D" jdbcType="LONGVARCHAR" property="questionD" />
+  </resultMap>
+</mapper>

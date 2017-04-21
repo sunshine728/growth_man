@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myssm.mapper.TbMenuMapper">
+  <resultMap id="BaseResultMap" type="com.myssm.bean.TbMenu">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="menu_id" jdbcType="VARCHAR" property="menuId" />
+    <result column="pmenu_id" jdbcType="VARCHAR" property="pmenuId" />
+    <result column="menu_name" jdbcType="VARCHAR" property="menuName" />
+    <result column="morder" jdbcType="INTEGER" property="morder" />
+    <result column="morder_id" jdbcType="VARCHAR" property="morderId" />
+    <result column="nodeflag" jdbcType="VARCHAR" property="nodeflag" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="module_id" jdbcType="VARCHAR" property="moduleId" />
+  </resultMap>
+</mapper>

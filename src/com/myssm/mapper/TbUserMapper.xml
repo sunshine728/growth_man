@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myssm.mapper.TbUserMapper">
+  <resultMap id="BaseResultMap" type="com.myssm.bean.TbUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_pwd" jdbcType="VARCHAR" property="userPwd" />
+    <result column="user_adress" jdbcType="VARCHAR" property="userAdress" />
+    <result column="user_age" jdbcType="INTEGER" property="userAge" />
+    <result column="user_borth" jdbcType="DATE" property="userBorth" />
+    <result column="user_edu" jdbcType="VARCHAR" property="userEdu" />
+    <result column="user_gender" jdbcType="INTEGER" property="userGender" />
+    <result column="user_mail" jdbcType="VARCHAR" property="userMail" />
+    <result column="user_realname" jdbcType="VARCHAR" property="userRealname" />
+    <result column="user_tel" jdbcType="VARCHAR" property="userTel" />
+    <result column="user_workplace" jdbcType="VARCHAR" property="userWorkplace" />
+    <result column="user_upload" jdbcType="LONGVARCHAR" property="userUpload" />
+  </resultMap>
+  
+  
+  <select id="getUser" parameterType="int" resultMap="BaseResultMap">
+  		select * from tb_user where user_id=#{userId}
+  </select>
+  
+  
+  <select id="getUsers" resultMap="BaseResultMap">
+  	select * from tb_user order by user_id
+  </select>
+  
+  <delete id="delUser" parameterType="int">
+  	delete from tb_user where user_id=#{userId}
+  </delete>
+  
+  <insert id="addUser" keyProperty="userId" parameterType="com.myssm.bean.TbUser" useGeneratedKeys="true">
+  insert into tb_user (user_name,user_pwd) values(#{userName},#{userPwd})
+  </insert>
+</mapper>

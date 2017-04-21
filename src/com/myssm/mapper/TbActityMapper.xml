@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myssm.mapper.TbActityMapper">
+  <resultMap id="BaseResultMap" type="com.myssm.bean.TbActity">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="actity_id" jdbcType="INTEGER" property="actityId" />
+    <result column="actity_title" jdbcType="VARCHAR" property="actityTitle" />
+    <result column="actity_startdate" jdbcType="DATE" property="actityStartdate" />
+    <result column="actity_enddate" jdbcType="DATE" property="actityEnddate" />
+    <result column="create_user_id" jdbcType="INTEGER" property="createUserId" />
+    <result column="actity_content" jdbcType="LONGVARCHAR" property="actityContent" />
+  </resultMap>
+  
+  <select id="getActivities" parameterType="int" resultMap="BaseResultMap">
+  	select * from tb_actity where create_user_id=#{userId} order by actity_enddate  desc  
+  </select> 
+  <select id="getAct" parameterType="int" resultMap="BaseResultMap">
+  	select * from tb_actity where actity_id=#{actId}
+  </select>
+  <insert id="insAct" parameterType="com.myssm.bean.TbActity">
+  insert into tb_actity(actity_title,actity_content,actity_startdate,actity_enddate,create_user_id) value(#{actityTitle},#{actityContent},#{actityStartdate},#{actityEnddate},#{createUserId})
+  </insert>
+  <update id="updAct" parameterType="com.myssm.bean.TbActity">
+  update tb_actity set actity_title=#{actityTitle},actity_content=#{actityContent},actity_startdate=#{actityStartdate},actity_enddate=#{actityEnddate},create_user_id=#{createUserId} where actity_id=#{actityId}
+  </update>
+  <delete id="delAct" parameterType="com.myssm.bean.TbActity">
+  delete from tb_actity where actity_id=#{actityId}
+  </delete>
+</mapper>

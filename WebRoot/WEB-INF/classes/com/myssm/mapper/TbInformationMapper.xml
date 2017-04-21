@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myssm.mapper.TbInformationMapper">
+  <resultMap id="BaseResultMap" type="com.myssm.bean.TbInformation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="info_id" jdbcType="INTEGER" property="infoId" />
+    <result column="info_date" jdbcType="DATE" property="infoDate" />
+    <result column="info_title" jdbcType="VARCHAR" property="infoTitle" />
+    <result column="create_user_id" jdbcType="INTEGER" property="createUserId" />
+    <result column="create_date" jdbcType="DATE" property="createDate" />
+    <result column="ispush" jdbcType="INTEGER" property="ispush" />
+    <result column="info_category_id" jdbcType="INTEGER" property="infoCategoryId" />
+    <result column="img_old_path" jdbcType="VARCHAR" property="imgOldPath" />
+    <result column="img_new_path" jdbcType="VARCHAR" property="imgNewPath" />
+    <result column="info_resource" jdbcType="VARCHAR" property="infoResource" />
+    <result column="res_id" jdbcType="INTEGER" property="resId" />
+    <result column="info_content" jdbcType="LONGVARCHAR" property="infoContent" />
+  </resultMap>
+  
+  <select id="getInformation" parameterType="int" resultMap="BaseResultMap">
+    select * from tb_information  where info_category_id=#{infoCategoryId}
+   </select>
+  
+  <select id="getInfo" parameterType="int" resultMap="BaseResultMap">
+  		select * from tb_information where info_id=#{infoId}
+  		</select>
+</mapper>

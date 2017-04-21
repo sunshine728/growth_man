@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myssm.mapper.TbResAuthMapper">
+  <resultMap id="BaseResultMap" type="com.myssm.bean.TbResAuth">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="create_date" jdbcType="VARCHAR" property="createDate" />
+    <id column="creater" jdbcType="VARCHAR" property="creater" />
+    <id column="menu_id" jdbcType="VARCHAR" property="menuId" />
+    <id column="mod_date" jdbcType="VARCHAR" property="modDate" />
+    <id column="mod_user" jdbcType="VARCHAR" property="modUser" />
+    <id column="res_id" jdbcType="VARCHAR" property="resId" />
+  </resultMap>
+</mapper>

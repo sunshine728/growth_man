@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myssm.mapper.TbRoleMapper">
+  <resultMap id="BaseResultMap" type="com.myssm.bean.TbRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="role_description" jdbcType="VARCHAR" property="roleDescription" />
+  </resultMap>
+  
+  <select id="getRoles" resultMap="BaseResultMap">
+  select * from tb_role order by role_id
+  	
+  </select>
+  
+    <select id="getRole" resultMap="BaseResultMap">
+  select * from tb_role where role_id=#{roleId}
+  	
+  </select>
+    <insert id="addRole" keyProperty="roleId" parameterType="com.myssm.bean.TbRole" useGeneratedKeys="true">
+  insert into tb_role (role_name) values(#{roleName})
+  </insert>
+</mapper>

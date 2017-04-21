@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myssm.mapper.TbUserMenuMapper">
+  <resultMap id="BaseResultMap" type="com.myssm.bean.TbUserMenu">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="res_id" jdbcType="VARCHAR" property="resId" />
+    <id column="menu_id" jdbcType="VARCHAR" property="menuId" />
+    <result column="creater" jdbcType="VARCHAR" property="creater" />
+    <result column="create_date" jdbcType="VARCHAR" property="createDate" />
+    <result column="mod_user" jdbcType="VARCHAR" property="modUser" />
+    <result column="mod_date" jdbcType="VARCHAR" property="modDate" />
+  </resultMap>
+  
+  <insert id="addResAuthBatch" parameterType="java.util.List">  
+   
+    insert into tb_user_menu (res_id,menu_id,creater,create_date)   
+    values  
+    <foreach collection="list" index="index" item="tbResAuth" separator=",">  
+        (#{tbResAuth.resId},#{tbResAuth.menuId},#{tbResAuth.creater},#{tbResAuth.createDate})  
+    </foreach>  
+</insert>  
+</mapper>
